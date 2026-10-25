@@ -1,0 +1,9 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: trainlog
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB:trainlog}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD}
