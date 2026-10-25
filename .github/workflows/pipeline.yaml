@@ -9,6 +9,22 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: trainlog_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres123
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d trainlog_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5 
+
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -20,5 +36,10 @@ jobs:
           java-version: '21'
           cache: maven
 
-      - name: Executar testes unitários
+      - name: Executar testes
+        env:
+          POSTGRES_DB: trainlog_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres123
+          POSTGRES_PORT: 5432
         run: ./mvnw test
