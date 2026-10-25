@@ -9,17 +9,16 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-  steps:
-    - name: Checkout do código
-      uses: actions/checkout@v4
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
 
-    - name: Configurar Java
-      uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: '21'
-        cache: maven
-
-    - name: Executar testes unitários
-      run: ./mvnw test
+      - name: Executar testes unitários
+        run: ./mvnw test
