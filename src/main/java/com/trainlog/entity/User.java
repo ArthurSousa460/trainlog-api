@@ -1,4 +1,4 @@
-package com.trainlog.entities;
+package com.trainlog.entity;
 
 
 import jakarta.persistence.*;

@@ -1,8 +1,7 @@
-package com.trainlog.entities;
+package com.trainlog.entity;
 
 import jakarta.persistence.*;
 
-import java.time.Instant;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
