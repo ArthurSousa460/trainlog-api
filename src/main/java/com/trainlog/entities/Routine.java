@@ -22,8 +22,7 @@ public class Routine extends BaseEntity{
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToMany
-    @JoinColumn(name = "routines")
+    @ManyToMany(mappedBy = "routines")
     private Set<Exercise> exercise = new HashSet<>();
 
 }

@@ -21,11 +21,11 @@ public class Exercise extends BaseEntity{
 
 
     @ManyToOne
-    @JoinColumn(name = "type_id", nullable = false)
+    @JoinColumn(name = "ype_id", nullable = false)
     private ExerciseType exerciseType;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user", nullable = false)
     private User user;
 
     @ManyToMany

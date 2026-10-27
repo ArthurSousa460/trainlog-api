@@ -27,7 +27,7 @@ public class Serie {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @OneToMany(mappedBy = "serie_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "serie", cascade = CascadeType.ALL)
     private List<SerieSession> serieSessions = new ArrayList<>();
 
 }
