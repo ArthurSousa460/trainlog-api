@@ -1,12 +1,9 @@
 package com.trainlog.service;
 
-import com.trainlog.DTO.requests.RequestExerciseDTO;
 import com.trainlog.entity.Exercise;
-import com.trainlog.entity.ExerciseType;
 import com.trainlog.repository.ExerciseRepository;
 import com.trainlog.repository.ExerciseTypeRepository;
-import exceptions.BusinessException;
-import exceptions.ResourceNotFoundException;
+import com.trainlog.exceptions.ResourceNotFoundException;
 import lombok.Data;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

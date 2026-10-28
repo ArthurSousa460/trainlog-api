@@ -13,3 +13,7 @@ spring:
     url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB:trainlog}
     username: ${POSTGRES_USER:postgres}
     password: ${POSTGRES_PASSWORD}
+autentication:
+    jwt:
+      secret: ${JWT_SECRET}
+      expiration: 3600000

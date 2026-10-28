@@ -1,4 +1,4 @@
-package com.trainlog.DTO.requests;
+package com.trainlog.dto.requests;
 
 import java.util.UUID;
 
