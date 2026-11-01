@@ -1,4 +1,4 @@
-package com.trainlog.dto;
+package com.trainlog.dto.responses;
 
 import com.trainlog.entity.Exercise;
 
