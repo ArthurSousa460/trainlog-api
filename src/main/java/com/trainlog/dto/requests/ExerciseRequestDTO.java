@@ -2,8 +2,7 @@ package com.trainlog.dto.requests;
 
 import java.util.UUID;
 
-public record RequestExerciseDTO(
-        UUID id,
+public record ExerciseRequestDTO(
         String name,
         String media_url,
         UUID type
