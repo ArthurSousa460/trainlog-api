@@ -3,8 +3,11 @@ package com.trainlog.entity;
 
 import com.trainlog.enums.SerieSessionStatusEnum;
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
-import java.time.LocalTime;
+import java.math.BigDecimal;
+import java.time.Duration;
 import java.util.UUID;
 
 @Entity
@@ -24,12 +27,15 @@ public class SerieSession {
     private Serie serie;
 
     private String exercise_type;
-    private double weight;
-    private LocalTime time;
+    @Column(precision = 7, scale = 2)
+    private BigDecimal weight;
+    @JdbcTypeCode(SqlTypes.INTERVAL_SECOND)
+    private Duration time;
     @Enumerated(EnumType.STRING)
     private SerieSessionStatusEnum status;
     private Integer repetitions;
-    private Double distance;
+    @Column(precision = 7, scale = 2)
+    private BigDecimal distance;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

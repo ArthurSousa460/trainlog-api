@@ -17,7 +17,6 @@ public class ExerciseType extends BaseEntity {
     private String name;
 
 
-
     @OneToMany(mappedBy = "exerciseType", cascade = CascadeType.ALL)
     private List<Exercise> exercises = new ArrayList<>();
 
